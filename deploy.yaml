@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: devops-app-c5
-        image: anilkumar061/scroll-web:latest
+        image: anilkumar061/vinayakacaable:latest
         ports:
         - containerPort: 80
 --- 
