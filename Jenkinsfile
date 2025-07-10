@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'anilkumar061/vcfibernetweb:latest'
+        DOCKER_IMAGE = 'anilkumar061/vinayakacable:latest'
     }
     stages {
         stage('Clone Repository') {
