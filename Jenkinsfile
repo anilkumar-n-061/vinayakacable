@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'anilkumar061/vinayakacable:latest'
+        DOCKER_IMAGE = 'anilkumar061/vcfibernetweb:latest'
     }
     stages {
         stage('Clone Repository') {
@@ -32,7 +32,11 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl apply -f deploy.yaml'
+                script{
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubernetes', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                // some block
+                 sh 'kubectl apply -f deploy.yaml'    
+                }
             }
         }
     }
