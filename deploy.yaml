@@ -16,10 +16,6 @@ spec:
       containers:
       - name: devops-app-c5
         image: anilkumar061/vinayakacable:latest
-        imagePullPolicy: Always
-        imagePullSecrets:
-       - name: my-proxy-secret
-        ports:
         - containerPort: 8000
 --- 
 apiVersion: v1
